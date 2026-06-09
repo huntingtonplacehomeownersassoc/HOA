@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huntington Place Homeowners' Association — Canton, Michigan</title>
+  <meta name="description" content="Official site of the Huntington Place Homeowners' Association, Huntington Place Subdivision, Charter Township of Canton, Wayne County, Michigan." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== TOP NAVIGATION ===== -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#home">Huntington Place HOA</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link" href="#home">Home</a></li>
+        <li><a class="nav__link" href="#about">About</a></li>
+        <li><a class="nav__link" href="#events">Dates &amp; Events</a></li>
+        <li><a class="nav__link" href="#documents">Documents</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HOME ===== -->
+    <section id="home" class="section section--hero" tabindex="-1">
+      <div class="container">
+        <h1 class="hero__title">Huntington Place Homeowners' Association</h1>
+        <p class="hero__subtitle">Canton, Michigan</p>
+        <p class="hero__welcome">
+          Welcome to the official website of the Huntington Place Homeowners'
+          Association, Inc. Our community of homeowners works together to maintain
+          the common areas and uphold the standards that make Huntington Place a
+          great place to live. Here you'll find meeting dates, association
+          documents, and ways to get in touch with the board.
+        </p>
+
+        <!-- Notices callout — editable static text -->
+        <aside class="notice" role="note" aria-label="Notices">
+          <h2 class="notice__title">Notices</h2>
+          <p class="notice__text">
+            There are no urgent notices at this time. Please check the
+            <a href="#events">Dates &amp; Events</a> and
+            <a href="#documents">Documents</a> sections for the latest
+            association updates.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section" tabindex="-1">
+      <div class="container">
+        <h2 class="section__title">About</h2>
+        <ul class="about__list">
+          <li>
+            The Association exists to maintain our shared common areas and uphold
+            community standards for the benefit of all homeowners.
+          </li>
+          <li>
+            Huntington Place Subdivision is a community of 87 homes (lots).
+          </li>
+          <li>
+            We are located in the Charter Township of Canton, Wayne County,
+            Michigan.
+          </li>
+          <li>
+            The Association is governed by a Declaration of Covenants and
+            Restrictions dated August 5, 1994, along with the bylaws of the
+            Association.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== DATES & EVENTS ===== -->
+    <section id="events" class="section section--alt" tabindex="-1">
+      <div class="container">
+        <h2 class="section__title">Dates &amp; Events</h2>
+        <div class="table-wrap">
+          <table class="events__table">
+            <caption class="sr-only">Upcoming association meetings and events</caption>
+            <thead>
+              <tr>
+                <th scope="col">Event</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Annual Meeting</td>
+                <td>[Add date]</td>
+                <td>6:30 PM</td>
+                <td>Canton Township Administrative Building (Room A)</td>
+              </tr>
+              <tr>
+                <td>Board Meeting</td>
+                <td>[Add date]</td>
+                <td>6:30 PM</td>
+                <td>Canton Township Administrative Building (Room A)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="events__note">Dates subject to change — check notices.</p>
+      </div>
+    </section>
+
+    <!-- ===== DOCUMENTS ===== -->
+    <section id="documents" class="section" tabindex="-1">
+      <div class="container">
+        <h2 class="section__title">Documents</h2>
+        <p class="documents__intro">
+          Select a category below to view association documents. Files open in a
+          new tab.
+        </p>
+
+        <div class="documents__controls">
+          <label class="documents__label" for="categorySelect">Document category</label>
+          <select id="categorySelect" class="documents__select"></select>
+        </div>
+
+        <!-- Documents render here dynamically from script.js -->
+        <ul id="documentsList" class="documents__list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section--alt" tabindex="-1">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <ul class="contact__list">
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:huntingtonplacei@gmail.com">huntingtonplacei@gmail.com</a>
+          </li>
+          <li>
+            <strong>Meeting location:</strong>
+            Canton Township Administrative Building, 1150 Canton Center Rd, Canton, MI
+          </li>
+          <li>
+            <strong>Legacy site:</strong>
+            <a href="http://sites.google.com/site/huntingtonplacei" target="_blank" rel="noopener">
+              sites.google.com/site/huntingtonplacei
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Huntington Place HOA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
