@@ -20,7 +20,7 @@ const DOCUMENT_LIBRARY = [
     documents: [
       {
         title: "Huntington Bylaws.pdf",
-        url: "https://thepossiblecompany.sharepoint.com/contentstorage/CSP_21747852-c485-4213-b774-81fd56419e5d/_layouts/15/Embed.aspx?UniqueId=7f3d352c-ea4c-44aa-aa99-51d62e315cf8&EntityRepresentationId=c49b3cd7-9a00-45d3-901f-e4d8deacf9db"
+        url: "https://drive.google.com/file/d/1_j1q9L91I65iMkE8YJ4X0QP_SDG0L1-Q/view?usp=sharing"
       },
       {
         title: "HPHOA Covenants and Restrictions.pdf",
