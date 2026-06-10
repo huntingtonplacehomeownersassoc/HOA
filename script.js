@@ -18,57 +18,41 @@ const DOCUMENT_LIBRARY = [
   {
     category: "Governing Documents",
     documents: [
-      {
-        title: "Huntington Bylaws.pdf",
-        url: "https://drive.google.com/file/d/1_j1q9L91I65iMkE8YJ4X0QP_SDG0L1-Q/view?usp=sharing"
-      },
-      {
-        title: "HPHOA Covenants and Restrictions.pdf",
-        url: "https://thepossiblecompany.sharepoint.com/contentstorage/CSP_21747852-c485-4213-b774-81fd56419e5d/_layouts/15/Embed.aspx?UniqueId=8fe0313a-ef1b-4f01-b8bb-9d0d1bc6634b&EntityRepresentationId=35cf7e15-dc0c-42b9-a4cb-09b3a161d7e4"
-      }
+      { title: "Huntington Place Bylaws.pdf", url: "https://drive.google.com/file/d/1dzc-nJ6lKAqQKcqOaQ-ShW1jWpxZKV3Z/view?usp=drivesdk" },
+      { title: "HPHOA Covenants and Restrictions.pdf", url: "https://drive.google.com/file/d/1luXDCqQNsMN1vWYtRray1UoYQ0N7Z_o1/view?usp=drivesdk" }
     ]
   },
   {
-    category: "Financials (Budget vs Actual)",
+    category: "Ponds, Roads, and Maintenance",
     documents: [
-      { title: "2020 Financials.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2021 Financials.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2022 Financials.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2023 Financials.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2024 Financials.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2025 Financials.pdf", url: "PASTE_PDF_URL_HERE" }
+      { title: "Pond Maintenance Guidelines.pdf", url: "https://drive.google.com/file/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ12345/view?usp=drivesdk" },
+      { title: "2004 HP II Retention Pond Agreement.pdf", url: "https://drive.google.com/file/d/1nT9gedeViWDJ7JRV2cc3opsw1t6hPOVp/view?usp=drivesdk" },
+      { title: "Road Work Local Match FAQs_20220823.pdf", url: "https://drive.google.com/file/d/1eXq9m-iPFeIpbn_3mKDJFwODJR5b8m1H/view?usp=drivesdk" }
+      
     ]
   },
   {
-    category: "Pond / Commons Agreements & Cost Sharing",
+    category: "Financials",
     documents: [
-      { title: "2004 HP II Agreement.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2020 HP I Share of pond Expense.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2021 HP Share of pond expense.pdf", url: "PASTE_PDF_URL_HERE" },
-      { title: "2023 HO I Share of Pond Expense.pdf", url: "PASTE_PDF_URL_HERE" }
+      { title: "HP1 2023 Financials.pdf", url: "https://drive.google.com/file/d/11gdJpZn_oHf2L1Jllehly7M-LWuqcAq0/view?usp=drivesdk" },
+      { title: "HP1 2022 Financials.pdf", url: "https://drive.google.com/file/d/141U2L1LAYTzWlZndwmz7rGvq8FkOYP5H/view?usp=drivesdk" },
+      { title: "HP1 2024 Financials.pdf", url: "https://drive.google.com/file/d/1NoRgaHIRUJZeYvmqnKctPJ6HDe9hSY9V/view?usp=drivesdk" },
+      { title: "HP1 2020 Financials.pdf", url: "https://drive.google.com/file/d/1RJKhlHGShkcFQ2XLVlCQbZc4wfaKiDrK/view?usp=drivesdk" },
+      { title: "HP1 2025 Financials.pdf", url: "https://drive.google.com/file/d/1h97jqFVwMILVTG-kskye_wzb-hyZQFPf/view?usp=drivesdk" },
+      { title: "HP1 2021 Financials.pdf", url: "https://drive.google.com/file/d/1rxIqerkQV75CABAO8aIH8icYWswsm6bg/view?usp=drivesdk" },
+      { title: "HP1 2025 Financials.pdf", url: "https://drive.google.com/file/d/1h97jqFVwMILVTG-kskye_wzb-hyZQFPf/view?usp=drivesdk" },
+      { title: "HP1 2021 Financials.pdf", url: "https://drive.google.com/file/d/1rxIqerkQV75CABAO8aIH8icYWswsm6bg/view?usp=drivesdk" }
     ]
   },
   {
-    category: "Notices & Member Letters",
+    category: "Meeting Minutes",
     documents: [
-      {
-        title: "Special Meeting 12.4.25.pdf",
-        url: "https://thepossiblecompany.sharepoint.com/contentstorage/CSP_21747852-c485-4213-b774-81fd56419e5d/_layouts/15/Embed.aspx?UniqueId=e7c3f51d-88bd-4ea2-aa93-e5acd4a12039&EntityRepresentationId=9b8d4e00-8da6-4a8d-a490-5ef994b44847"
-      },
-      {
-        title: "NoticeToMembersAboutRightToTransparency.txt",
-        url: "https://aka.ms/spe-openfilelocation?EntityRepresentationId=e9ea557f-2f78-4ab9-8be0-d7259741adc3"
-      },
-      {
-        title: "LetterToPresidentOfHOA.txt",
-        url: "https://aka.ms/spe-openfilelocation?EntityRepresentationId=2ee94113-e293-4a8a-920b-277b98e84bc0"
-      }
-    ]
-  },
-  {
-    category: "Michigan Law Reference",
-    documents: [
-      { title: "mcl-Act-162-of-1982.pdf", url: "PASTE_PDF_URL_HERE" }
+      { title: "2025 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1-rzx4bsNSojU_3R_G-d8b67Ggv5MPbyC/view?usp=drivesdk" },
+      { title: "2022 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/14EkTCJEdkoPUxxZaaOc-BEA7_0_EA8tc/view?usp=drivesdk" },
+      { title: "2020 Homeowners info Minutes.pdf", url: "https://drive.google.com/file/d/15YMiJOSzcSs5hCrtBUzoJ9-Po1OyVEuC/view?usp=drivesdk" },
+      { title: "2024 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1B1FvT689UtsSV7UiHOr6OLt3UP4bUyqt/view?usp=drivesdk" },
+      { title: "2021 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1FLVZOtiXQdBIzzciwIk8hIuu4QNWku8T/view?usp=drivesdk" },
+      { title: "2023 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1ciqGKoyqQtnkPMm_XfsxR3sAc0IXsr_7/view?usp=drivesdk" }
     ]
   }
 ];
