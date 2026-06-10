@@ -32,7 +32,7 @@ const DOCUMENT_LIBRARY = [
     ]
   },
   {
-    category: "Financials",
+    category: "Financial Documents",
     documents: [
       { title: "HP1 2023 Financials.pdf", url: "https://drive.google.com/file/d/11gdJpZn_oHf2L1Jllehly7M-LWuqcAq0/view?usp=drivesdk" },
       { title: "HP1 2022 Financials.pdf", url: "https://drive.google.com/file/d/141U2L1LAYTzWlZndwmz7rGvq8FkOYP5H/view?usp=drivesdk" },
