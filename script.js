@@ -16,9 +16,9 @@
 
 const DOCUMENT_LIBRARY = [
   {
-    category: "Governing Documents (Bylaws)",
+    category: "Governing Documents",
     documents: [
-      { title: "Huntington Place Bylaws.pdf (BYLAWS)", url: "https://drive.google.com/file/d/1dzc-nJ6lKAqQKcqOaQ-ShW1jWpxZKV3Z/view?usp=drivesdk" },
+      { title: "Huntington Place Bylaws.pdf", url: "https://drive.google.com/file/d/1dzc-nJ6lKAqQKcqOaQ-ShW1jWpxZKV3Z/view?usp=drivesdk" },
       { title: "HPHOA Covenants and Restrictions.pdf", url: "https://drive.google.com/file/d/1luXDCqQNsMN1vWYtRray1UoYQ0N7Z_o1/view?usp=drivesdk" }
     ]
   },
