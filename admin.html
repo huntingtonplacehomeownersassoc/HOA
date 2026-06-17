@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOA Admin — Huntington Place</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f4f6f9;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      background: #1a3a5c;
+      color: #fff;
+      padding: 1.25rem 2rem;
+    }
+    .site-header h1 { font-size: 1.4rem; font-weight: 700; }
+    .site-header p  { font-size: 0.9rem; opacity: 0.8; margin-top: 0.25rem; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* Steps */
+    .step {
+      background: #fff;
+      border: 1px solid #dde3ed;
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin: 1.5rem auto;
+      max-width: 900px;
+    }
+    .step-number {
+      display: inline-block;
+      background: #1a3a5c;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .step h2 { font-size: 1.15rem; margin-bottom: 0.6rem; color: #1a3a5c; }
+    .step p   { font-size: 0.9rem; color: #555; margin-bottom: 0.75rem; }
+    .step p:last-child { margin-bottom: 0; }
+
+    /* File picker */
+    .file-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1a3a5c;
+      color: #fff;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .file-label:hover { background: #14305a; }
+    .file-label input[type="file"] { display: none; }
+
+    .status-ok  { color: #1a7a44; font-weight: 600; font-size: 0.9rem; margin-top: 0.6rem; }
+    .status-err { color: #c0392b; font-weight: 600; font-size: 0.9rem; margin-top: 0.6rem; }
+
+    /* Events table editor */
+    .events-table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+    .events-table th {
+      background: #f0f4f8;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #555;
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      border-bottom: 2px solid #dde3ed;
+    }
+    .events-table td { padding: 0.4rem 0.5rem; vertical-align: top; }
+    .events-table tr:not(:last-child) td { border-bottom: 1px solid #eee; }
+    .events-table input[type="text"] {
+      width: 100%;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid #cdd5df;
+      border-radius: 5px;
+      font-size: 0.875rem;
+      font-family: inherit;
+    }
+    .events-table input[type="text"]:focus {
+      outline: none;
+      border-color: #1a3a5c;
+      box-shadow: 0 0 0 3px rgba(26,58,92,0.12);
+    }
+    .btn-remove {
+      background: none;
+      border: 1px solid #e0d0d0;
+      color: #c0392b;
+      border-radius: 5px;
+      padding: 0.35rem 0.55rem;
+      cursor: pointer;
+      font-size: 0.85rem;
+      line-height: 1;
+    }
+    .btn-remove:hover { background: #fdf0f0; }
+
+    /* Documents editor */
+    .category-block {
+      border: 1px solid #dde3ed;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #f0f4f8;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid #dde3ed;
+    }
+    .category-header label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #666; white-space: nowrap; }
+    .category-header input[type="text"] {
+      flex: 1;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #cdd5df;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      font-weight: 600;
+    }
+    .category-header input[type="text"]:focus {
+      outline: none;
+      border-color: #1a3a5c;
+    }
+    .btn-remove-cat {
+      background: none;
+      border: 1px solid #e0d0d0;
+      color: #c0392b;
+      border-radius: 5px;
+      padding: 0.35rem 0.6rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .btn-remove-cat:hover { background: #fdf0f0; }
+
+    .doc-row {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr auto;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .doc-row:last-child { border-bottom: none; }
+    .doc-row input[type="text"] {
+      width: 100%;
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #cdd5df;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .doc-row input[type="text"]:focus {
+      outline: none;
+      border-color: #1a3a5c;
+      box-shadow: 0 0 0 3px rgba(26,58,92,0.1);
+    }
+    .doc-row-labels {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr auto;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem 0;
+    }
+    .doc-row-labels span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: #888;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .category-footer {
+      padding: 0.65rem 1rem;
+      background: #fafbfc;
+      border-top: 1px solid #eee;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      border-radius: 6px;
+      border: 1px solid;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .btn-outline {
+      background: #fff;
+      border-color: #cdd5df;
+      color: #1a3a5c;
+    }
+    .btn-outline:hover { background: #f0f4f8; }
+
+    .btn-primary {
+      background: #1a7a44;
+      border-color: #1a7a44;
+      color: #fff;
+      font-size: 1rem;
+      padding: 0.75rem 1.75rem;
+    }
+    .btn-primary:hover { background: #15693b; }
+
+    .hidden { display: none !important; }
+
+    .tip {
+      background: #fffbea;
+      border: 1px solid #f0d060;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: #7a5800;
+      margin-bottom: 1rem;
+    }
+    .tip strong { color: #5a3f00; }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #999;
+      padding: 2rem 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Huntington Place HOA — Website Admin</h1>
+  <p>Use this page to update meeting dates and document links. No coding required.</p>
+</header>
+
+<!-- ===== STEP 1: LOAD FILE ===== -->
+<div class="step" style="max-width:900px; margin: 1.5rem auto;">
+  <div class="step-number">Step 1</div>
+  <h2>Load your current data file</h2>
+  <p>
+    Click the button below and select <strong>site-data.js</strong> from your website folder.
+    This loads your current meetings and documents into the form below.
+  </p>
+  <label class="file-label">
+    📂 &nbsp;Choose site-data.js
+    <input type="file" id="fileInput" accept=".js" />
+  </label>
+  <p id="fileStatus"></p>
+</div>
+
+<!-- ===== STEP 2: EDITOR (hidden until file loads) ===== -->
+<div id="editor" class="hidden">
+
+  <!-- 2a: Events -->
+  <div class="step">
+    <div class="step-number">Step 2a</div>
+    <h2>Meetings &amp; Events</h2>
+    <p>Edit the dates, times, and locations for each event. Click <strong>+ Add Row</strong> to add a new event.</p>
+
+    <table class="events-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Event Name</th>
+          <th style="width:18%">Date</th>
+          <th style="width:14%">Time</th>
+          <th>Location</th>
+          <th style="width:50px"></th>
+        </tr>
+      </thead>
+      <tbody id="eventRows"></tbody>
+    </table>
+    <button class="btn btn-outline" onclick="addEventRow()">+ Add Row</button>
+  </div>
+
+  <!-- 2b: Documents -->
+  <div class="step">
+    <div class="step-number">Step 2b</div>
+    <h2>Document Categories &amp; Links</h2>
+    <p>
+      Each box below is one category in the dropdown on the website.
+      Edit document names and paste in Google Drive share links (or any link).
+    </p>
+    <div class="tip">
+      <strong>Tip:</strong> To get a shareable Google Drive link, right-click the file in Drive →
+      "Share" → "Copy link". Make sure the access is set to "Anyone with the link."
+    </div>
+    <div id="categoriesContainer"></div>
+    <button class="btn btn-outline" onclick="addCategory()">+ Add Category</button>
+  </div>
+
+  <!-- Step 3: Download -->
+  <div class="step" style="text-align:center; background: #f0f7f4; border-color: #a8d5be;">
+    <div class="step-number">Step 3</div>
+    <h2>Save &amp; Download</h2>
+    <p>
+      When you're done editing, click the button below.
+      A file called <strong>site-data.js</strong> will download automatically.
+    </p>
+    <p style="margin-bottom:1.25rem;">
+      Then <strong>replace the old site-data.js</strong> in your website folder with this downloaded file.
+      The website will show your changes immediately.
+    </p>
+    <button class="btn btn-primary" onclick="saveAndDownload()">
+      💾 &nbsp;Download Updated site-data.js
+    </button>
+  </div>
+
+</div><!-- /editor -->
+
+<footer>Huntington Place HOA Admin Tool</footer>
+
+<script>
+/* ============================================================
+   Admin tool logic
+   ============================================================ */
+
+var currentData = null;
+
+/* ---- File loading ---- */
+document.getElementById("fileInput").addEventListener("change", function (e) {
+  var file = e.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+  reader.onload = function (evt) {
+    try {
+      /* Execute the file content to extract SITE_DATA */
+      var code = evt.target.result;
+      var fn = new Function(code + "\n; return typeof SITE_DATA !== 'undefined' ? SITE_DATA : null;");
+      var data = fn();
+      if (!data || !data.events || !data.documents) {
+        throw new Error("Could not find SITE_DATA in the file.");
+      }
+      currentData = JSON.parse(JSON.stringify(data)); /* deep copy */
+      buildForm(currentData);
+      document.getElementById("editor").classList.remove("hidden");
+      setStatus("✅ " + file.name + " loaded successfully.", "ok");
+    } catch (err) {
+      setStatus("❌ Error loading file: " + err.message + " — Make sure you selected site-data.js.", "err");
+    }
+  };
+  reader.readAsText(file);
+});
+
+function setStatus(msg, type) {
+  var el = document.getElementById("fileStatus");
+  el.textContent = msg;
+  el.className = type === "ok" ? "status-ok" : "status-err";
+}
+
+/* ---- Build form from data ---- */
+function buildForm(data) {
+  buildEventsForm(data.events);
+  buildDocumentsForm(data.documents);
+}
+
+/* ---- Events form ---- */
+function buildEventsForm(events) {
+  var tbody = document.getElementById("eventRows");
+  tbody.innerHTML = "";
+  events.forEach(function (ev) {
+    tbody.appendChild(createEventRow(ev.event, ev.date, ev.time, ev.location));
+  });
+}
+
+function createEventRow(event, date, time, location) {
+  var tr = document.createElement("tr");
+  tr.innerHTML =
+    '<td><input type="text" class="ev-event"    value="' + esc(event)    + '" placeholder="e.g. Annual Meeting" /></td>' +
+    '<td><input type="text" class="ev-date"     value="' + esc(date)     + '" placeholder="e.g. March 18, 2026" /></td>' +
+    '<td><input type="text" class="ev-time"     value="' + esc(time)     + '" placeholder="e.g. 6:30 PM" /></td>' +
+    '<td><input type="text" class="ev-location" value="' + esc(location) + '" placeholder="e.g. Canton Township Admin Bldg" /></td>' +
+    '<td><button class="btn-remove" onclick="removeRow(this)" title="Remove row">✕</button></td>';
+  return tr;
+}
+
+function addEventRow() {
+  document.getElementById("eventRows").appendChild(
+    createEventRow("", "", "6:30 PM", "Canton Township Administrative Building (Room A)")
+  );
+}
+
+function removeRow(btn) {
+  btn.closest("tr").remove();
+}
+
+/* ---- Documents form ---- */
+function buildDocumentsForm(documents) {
+  var container = document.getElementById("categoriesContainer");
+  container.innerHTML = "";
+  documents.forEach(function (cat, i) {
+    container.appendChild(createCategoryBlock(cat, i));
+  });
+}
+
+function createCategoryBlock(cat, index) {
+  var block = document.createElement("div");
+  block.className = "category-block";
+  block.dataset.catIndex = index;
+
+  /* Category header */
+  var header = document.createElement("div");
+  header.className = "category-header";
+  header.innerHTML =
+    '<label>Category Name</label>' +
+    '<input type="text" class="cat-name" value="' + esc(cat.category) + '" placeholder="Category name" />' +
+    '<button class="btn-remove-cat" onclick="removeCategory(this)">Remove Category</button>';
+  block.appendChild(header);
+
+  /* Column labels for docs */
+  var labels = document.createElement("div");
+  labels.className = "doc-row-labels";
+  labels.innerHTML = '<span>Document Name</span><span>Link (URL)</span><span></span>';
+  block.appendChild(labels);
+
+  /* Document rows */
+  var docsContainer = document.createElement("div");
+  docsContainer.className = "docs-list";
+  cat.documents.forEach(function (doc) {
+    docsContainer.appendChild(createDocRow(doc.title, doc.url));
+  });
+  block.appendChild(docsContainer);
+
+  /* Footer: add doc button */
+  var footer = document.createElement("div");
+  footer.className = "category-footer";
+  var addBtn = document.createElement("button");
+  addBtn.className = "btn btn-outline";
+  addBtn.style.fontSize = "0.8rem";
+  addBtn.style.padding = "0.4rem 0.8rem";
+  addBtn.textContent = "+ Add Document";
+  addBtn.onclick = function () {
+    docsContainer.appendChild(createDocRow("", ""));
+  };
+  footer.appendChild(addBtn);
+  block.appendChild(footer);
+
+  return block;
+}
+
+function createDocRow(title, url) {
+  var row = document.createElement("div");
+  row.className = "doc-row";
+  row.innerHTML =
+    '<input type="text" class="doc-title" value="' + esc(title) + '" placeholder="Document name (shown on site)" />' +
+    '<input type="text" class="doc-url"   value="' + esc(url)   + '" placeholder="Paste link here (Google Drive, etc.)" />' +
+    '<button class="btn-remove" onclick="removeDoc(this)" title="Remove">✕</button>';
+  return row;
+}
+
+function removeDoc(btn) {
+  btn.closest(".doc-row").remove();
+}
+
+function addCategory() {
+  var container = document.getElementById("categoriesContainer");
+  var index = container.children.length;
+  container.appendChild(createCategoryBlock({ category: "New Category", documents: [] }, index));
+}
+
+function removeCategory(btn) {
+  if (confirm("Remove this entire category and all its documents?")) {
+    btn.closest(".category-block").remove();
+  }
+}
+
+/* ---- Collect data from form ---- */
+function collectData() {
+  var data = { events: [], documents: [] };
+
+  /* Events */
+  document.querySelectorAll("#eventRows tr").forEach(function (tr) {
+    data.events.push({
+      event:    tr.querySelector(".ev-event").value.trim(),
+      date:     tr.querySelector(".ev-date").value.trim(),
+      time:     tr.querySelector(".ev-time").value.trim(),
+      location: tr.querySelector(".ev-location").value.trim()
+    });
+  });
+
+  /* Documents */
+  document.querySelectorAll(".category-block").forEach(function (block) {
+    var cat = { category: "", documents: [] };
+    cat.category = block.querySelector(".cat-name").value.trim();
+    block.querySelectorAll(".doc-row").forEach(function (row) {
+      var title = row.querySelector(".doc-title").value.trim();
+      var url   = row.querySelector(".doc-url").value.trim();
+      if (title || url) {
+        cat.documents.push({ title: title, url: url });
+      }
+    });
+    data.documents.push(cat);
+  });
+
+  return data;
+}
+
+/* ---- Generate site-data.js content ---- */
+function generateCode(data) {
+  var lines = [];
+  lines.push("/* ===========================================================================");
+  lines.push("   HUNTINGTON PLACE HOA — Site Data");
+  lines.push("   ---------------------------------------------------------------------------");
+  lines.push("   Do not edit this file manually — use admin.html instead.");
+  lines.push("   =========================================================================== */");
+  lines.push("");
+  lines.push("var SITE_DATA = {");
+  lines.push("");
+  lines.push("  events: [");
+
+  data.events.forEach(function (ev, i) {
+    var comma = i < data.events.length - 1 ? "," : "";
+    lines.push("    {");
+    lines.push("      event:    " + JSON.stringify(ev.event)    + ",");
+    lines.push("      date:     " + JSON.stringify(ev.date)     + ",");
+    lines.push("      time:     " + JSON.stringify(ev.time)     + ",");
+    lines.push("      location: " + JSON.stringify(ev.location));
+    lines.push("    }" + comma);
+  });
+
+  lines.push("  ],");
+  lines.push("");
+  lines.push("  documents: [");
+
+  data.documents.forEach(function (cat, ci) {
+    var catComma = ci < data.documents.length - 1 ? "," : "";
+    lines.push("    {");
+    lines.push("      category: " + JSON.stringify(cat.category) + ",");
+    lines.push("      documents: [");
+    cat.documents.forEach(function (doc, di) {
+      var docComma = di < cat.documents.length - 1 ? "," : "";
+      lines.push("        { title: " + JSON.stringify(doc.title) + ", url: " + JSON.stringify(doc.url) + " }" + docComma);
+    });
+    lines.push("      ]");
+    lines.push("    }" + catComma);
+  });
+
+  lines.push("  ]");
+  lines.push("};");
+
+  return lines.join("\n");
+}
+
+/* ---- Download ---- */
+function saveAndDownload() {
+  var data    = collectData();
+  var content = generateCode(data);
+  var blob    = new Blob([content], { type: "text/javascript" });
+  var url     = URL.createObjectURL(blob);
+  var a       = document.createElement("a");
+  a.href      = url;
+  a.download  = "site-data.js";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+/* ---- Utility: escape HTML attribute values ---- */
+function esc(str) {
+  return String(str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+</script>
+
+</body>
+</html>
