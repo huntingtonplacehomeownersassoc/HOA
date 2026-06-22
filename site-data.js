@@ -18,12 +18,6 @@ var SITE_DATA = {
       date:     "[Add date]",
       time:     "6:30 PM",
       location: "Canton Township Administrative Building (Room A)"
-    },
-    {
-      event:    "Garage Sale",
-      date:     "[Add Date]",
-      time:     "12:00",
-      location: "Thursday - Sunday (mm/dd - mm/dd)"
     }
   ],
 
