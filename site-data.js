@@ -32,38 +32,38 @@ var SITE_DATA = {
     {
       category: "Governing Documents",
       documents: [
-        { title: "Huntington Place Bylaws.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*"https://drive.google.com/file/d/1dzc-nJ6lKAqQKcqOaQ-ShW1jWpxZKV3Z/view?usp=drivesdk"*/ },
-        { title: "HPHOA Covenants and Restrictions.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1luXDCqQNsMN1vWYtRray1UoYQ0N7Z_o1/view?usp=drivesdk"*/ }
+        { title: "Huntington Place Bylaws.pdf", url: "https://drive.google.com/file/d/1dzc-nJ6lKAqQKcqOaQ-ShW1jWpxZKV3Z/view?usp=drivesdk" },
+        { title: "HPHOA Covenants and Restrictions.pdf", url: "https://drive.google.com/file/d/1luXDCqQNsMN1vWYtRray1UoYQ0N7Z_o1/view?usp=drivesdk" }
       ]
     },
     {
       category: "Ponds, Roads, and Maintenance",
       documents: [
-        { title: "Pond Maintenance Guidelines.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ12345/view?usp=drivesdk"*/ },
-        { title: "2004 HP II Retention Pond Agreement.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1nT9gedeViWDJ7JRV2cc3opsw1t6hPOVp/view?usp=drivesdk"*/ },
-        { title: "Road Work Local Match FAQs_20220823.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1eXq9m-iPFeIpbn_3mKDJFwODJR5b8m1H/view?usp=drivesdk"*/ }
+        { title: "Pond Maintenance Guidelines.pdf", url: "https://drive.google.com/file/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ12345/view?usp=drivesdk" },
+        { title: "2004 HP II Retention Pond Agreement.pdf", url: "https://drive.google.com/file/d/1nT9gedeViWDJ7JRV2cc3opsw1t6hPOVp/view?usp=drivesdk" },
+        { title: "Road Work Local Match FAQs_20220823.pdf", url: "https://drive.google.com/file/d/1eXq9m-iPFeIpbn_3mKDJFwODJR5b8m1H/view?usp=drivesdk" }
       ]
     },
     {
       category: "Financial Documents",
       documents: [
-        { title: "HP1 2025 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1h97jqFVwMILVTG-kskye_wzb-hyZQFPf/view?usp=drivesdk"*/ },
-        { title: "HP1 2024 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1NoRgaHIRUJZeYvmqnKctPJ6HDe9hSY9V/view?usp=drivesdk"*/ },
-        { title: "HP1 2023 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/11gdJpZn_oHf2L1Jllehly7M-LWuqcAq0/view?usp=drivesdk"*/ },
-        { title: "HP1 2022 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/141U2L1LAYTzWlZndwmz7rGvq8FkOYP5H/view?usp=drivesdk"*/ },
-        { title: "HP1 2021 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1rxIqerkQV75CABAO8aIH8icYWswsm6bg/view?usp=drivesdk"*/ },
-        { title: "HP1 2020 Financials.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1RJKhlHGShkcFQ2XLVlCQbZc4wfaKiDrK/view?usp=drivesdk"*/ }
+        { title: "HP1 2025 Financials.pdf", url: "https://drive.google.com/file/d/1h97jqFVwMILVTG-kskye_wzb-hyZQFPf/view?usp=drivesdk" },
+        { title: "HP1 2024 Financials.pdf", url: "https://drive.google.com/file/d/1NoRgaHIRUJZeYvmqnKctPJ6HDe9hSY9V/view?usp=drivesdk" },
+        { title: "HP1 2023 Financials.pdf", url: "https://drive.google.com/file/d/11gdJpZn_oHf2L1Jllehly7M-LWuqcAq0/view?usp=drivesdk" },
+        { title: "HP1 2022 Financials.pdf", url: "https://drive.google.com/file/d/141U2L1LAYTzWlZndwmz7rGvq8FkOYP5H/view?usp=drivesdk" },
+        { title: "HP1 2021 Financials.pdf", url: "https://drive.google.com/file/d/1rxIqerkQV75CABAO8aIH8icYWswsm6bg/view?usp=drivesdk" },
+        { title: "HP1 2020 Financials.pdf", url: "https://drive.google.com/file/d/1RJKhlHGShkcFQ2XLVlCQbZc4wfaKiDrK/view?usp=drivesdk" }
       ]
     },
     {
       category: "Meeting Minutes",
       documents: [
-        { title: "2025 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1-rzx4bsNSojU_3R_G-d8b67Ggv5MPbyC/view?usp=drivesdk"*/ },
-        { title: "2024 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1B1FvT689UtsSV7UiHOr6OLt3UP4bUyqt/view?usp=drivesdk"*/ },
-        { title: "2023 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1ciqGKoyqQtnkPMm_XfsxR3sAc0IXsr_7/view?usp=drivesdk"*/ },
-        { title: "2022 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/14EkTCJEdkoPUxxZaaOc-BEA7_0_EA8tc/view?usp=drivesdk"*/ },
-        { title: "2021 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/1FLVZOtiXQdBIzzciwIk8hIuu4QNWku8T/view?usp=drivesdk"*/ },
-        { title: "2020 Homeowners info Minutes.pdf", url: "https://drive.google.com/file/d/1inJJqMCqBw2GxCVCtX2OHO9S8kFxDe-C/view" /*https://drive.google.com/file/d/15YMiJOSzcSs5hCrtBUzoJ9-Po1OyVEuC/view?usp=drivesdk"*/ }
+        { title: "2025 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1-rzx4bsNSojU_3R_G-d8b67Ggv5MPbyC/view?usp=drivesdk" },
+        { title: "2024 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1B1FvT689UtsSV7UiHOr6OLt3UP4bUyqt/view?usp=drivesdk" },
+        { title: "2023 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1ciqGKoyqQtnkPMm_XfsxR3sAc0IXsr_7/view?usp=drivesdk" },
+        { title: "2022 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/14EkTCJEdkoPUxxZaaOc-BEA7_0_EA8tc/view?usp=drivesdk" },
+        { title: "2021 Annual Meeting Minutes.pdf", url: "https://drive.google.com/file/d/1FLVZOtiXQdBIzzciwIk8hIuu4QNWku8T/view?usp=drivesdk" },
+        { title: "2020 Homeowners info Minutes.pdf", url: "https://drive.google.com/file/d/15YMiJOSzcSs5hCrtBUzoJ9-Po1OyVEuC/view?usp=drivesdk" }
       ]
     }
   ]
