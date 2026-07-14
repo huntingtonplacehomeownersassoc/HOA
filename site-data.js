@@ -18,7 +18,13 @@ var SITE_DATA = {
       date:     "[Add date]",
       time:     "6:30 PM",
       location: "Canton Township Administrative Building (Room A)"
-    }
+    },
+    {
+      event:    "Nick's Birthday",
+      date:     "12/25",
+      time:     "6:30 PM",
+      location: "Christmas in Vegas"
+    }     
   ],
 
   documents: [
